@@ -1,3 +1,0 @@
-DROP DATABASE IF EXISTS trade_db;
-CREATE DATABASE trade_db;
-
