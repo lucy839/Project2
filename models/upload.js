@@ -18,6 +18,6 @@ module.exports = function (sequelize, DataTypes) {
         Upload.belongsTo(models.Login,{
         });
     };
-    
+
     return Upload;
 }
