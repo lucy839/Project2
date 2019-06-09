@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Scarlet15$$",
     "database": "trade_db",
     "host": "localhost",
     "dialect": "mysql"
