@@ -1,4 +1,4 @@
-<div id="home">
+{{!-- <div id="home">
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
@@ -27,7 +27,14 @@
       </div>
     </div>
   </div>
-</div>
-
+</div> --}}
+<ul>
+  {{#each Upload}}
+  <li><b>{{this.product_name}} </b> <br> {{this.description}} <br> {{this.file_path}}</li>
+  {{/each}}
+</ul>
+{{!-- <form class="upload"> --}}
+  {{!-- <a href="/upload.handlebars" >upload</a> --}}
+<a href="/upload">upload</a>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+{{!-- <script src="/assets/js/index.js"></script> --}}
