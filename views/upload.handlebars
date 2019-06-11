@@ -1,20 +1,27 @@
 <form class="create-form" action="/api/upload" method="POST">
-<div class="form-group">
-    <label for="ca">Product name:</label>
-    <input type="text" id="product_name" name="product_name">
-</div>
-<div class="form-group">
-    <label for="ca">Description:</label>
-    <input type="text" id="description" name="description">
-</div>
-<div class="form-group">
-    <label for="ca">upload file:</label>
-    {{!-- <form action='/api/images' method="post" enctype="multipart/form-data">  
-    <input type='file' name='image' />
-    </form> --}}
+    <div class="form-group">
+        <label for="ca">Product name:</label>
+        <input type="text" id="product_name" name="product_name">
+    </div>
+    <div class="form-group">
+        <label for="ca">Description:</label>
+        <input type="text" id="description" name="description">
+    </div>
 
-    <input type="text" id="file_path" name="file_path">
-</div>
-            <button type="submit">submit</button>
-
+    <button type="submit" id="submitForm">submit</button>
 </form>
+<div class="form-group">
+    {{!-- <label for="ca">upload file:</label> --}}
+    <form action='/api/images' method="post" enctype="multipart/form-data">
+        <input type='file' name='image' id='image' />
+        <button type="submit">submit</button>
+
+    </form>
+
+    {{!-- <input type="text" id="file_path" name="file_path"> --}}
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{{!-- <script src = "/public/js/multer.js"></script> --}}
+{{!-- <script src="/assets/js/index.js"></script> --}}
+<script src="/js/uploadProduct.js"></script>

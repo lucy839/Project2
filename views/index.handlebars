@@ -16,25 +16,58 @@
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
         <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
+        {{!-- <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
             <a href="example/{{this.id}}">{{this.text}}</a>
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
-        </ul>
-      </div>
+        </ul> --}}
+{{!-- </div>
     </div>
   </div>
 </div> --}}
-<ul>
-  {{#each Upload}}
-  <li><b>{{this.product_name}} </b> <br> {{this.description}} <br> {{this.file_path}}</li>
+
+
+{{!-- <ul id="available-list" class="list-group">
+  {{#each available}}
+  <li data-id="{{this.id}}" class="list-group-item">
+    <a href="upload/{{this.id}}">{{this.text}}</a>
+   
+    <button class="btn btn-danger float-right delete">ｘ</button>
+  </li>
   {{/each}}
-</ul>
-{{!-- <form class="upload"> --}}
-  {{!-- <a href="/upload.handlebars" >upload</a> --}}
-<a href="/upload">upload</a>
+  
+</ul> --}}
+<div id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h3>Available:</h3><br>
+        <ul>
+          {{#each Upload}}
+          <li>
+            <b>{{this.product_name}} </b> <br>
+            {{this.description}} <br>
+            {{this.file_path}}
+            <br>
+            <button class="btn btn-danger float-right delete">trade</button>
+            <br><br>
+            <hr>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    {{!-- <form class="upload"> --}}
+    {{!-- <a href="/upload.handlebars" >upload</a> --}}
+    <button id="submit">upload</button>
+
+
+  </div>
+</div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {{!-- <script src="/assets/js/index.js"></script> --}}
+<script src="/js/index.js"></script>

@@ -1,17 +1,5 @@
 // havent added any validation yet.. just basic skeleton now
 module.exports = function (sequelize, DataTypes) {
-    var Upload = sequelize.define("Upload", {
-        product_name: {
-            type: DataTypes.STRING
-        },
-        description: {
-            type: DataTypes.STRING
-        },
-        // will leave it as string until I figure out 
-        file_path: {
-            type: DataTypes.STRING
-        }
-    });
     var Image = sequelize.define("Image",{
         url:{
          type: DataTypes.STRING
@@ -24,5 +12,5 @@ module.exports = function (sequelize, DataTypes) {
     //     });
     // };
 
-    return Upload;
+    return Image;
 }
