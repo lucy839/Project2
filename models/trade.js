@@ -11,6 +11,12 @@ var trade = {
             cb(res)
         })
     },
+    //Select all items specific to the user
+    userItems: function(cols, vals, cb) {
+        orm.selectItem("trades", cols, vals, function(res) {\
+        cb(res)
+        })
+    },
     //Add new item
     create: function(cols, vals, cb) {
         orm.addItem("trades", cols, vals, cb, function(res) {
@@ -19,7 +25,7 @@ var trade = {
     },
     //Change availability
     update: function(condition, cb) {
-        orm.updateOne("trades", "available=false", condition, function(res) {
+        orm.updateListing("trades", "available=false", condition, function(res) {
             cb(res)
         })
     },
