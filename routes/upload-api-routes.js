@@ -21,22 +21,38 @@ module.exports = function (app) {
             res.json(dbUpload)
         })
     })
+    
     // upload product
     app.post("/api/upload", function (req, res) {
         db.Upload.create({
             product_name: req.body.product_name,
             description: req.body.description,
-            file_path: req.body.file_path
+            // file_path: req.body.file_path
         }).then(function (dbUpload) {
              res.json(dbUpload);
         });   
+
     });
+   
+
     app.post('/api/images',parser.single("image"), function(req, res){
         var result = cloudinary.v2.uploader.upload(req.file.path)
-        res.send(result)
+        // res.send(result)
         // res.send(req.file);
         console.log(req.file);
+        
+        console.log(req.file.secure_url);
+        
+        db.Image.create({
+            url: req.file.secure_url
+        }).then(function (dbUpload) {
+            res.json(dbUpload);
+       });   
     })
+
+    
+
+
     // app.post('/api/images', parser.single("image"), (req, res) => {  
     //     console.log(req.file) // to see what is returned to you  
     //     const image = {};  

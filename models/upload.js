@@ -12,17 +12,13 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING
         }
     });
-    var Image = sequelize.define("Image",{
-        url:{
-         type: DataTypes.STRING
-        }
-    })
 
-    // needs to link to user once Steven has login done:)
-    // Upload.associate = function(models) {
-    //     Upload.belongsTo(models.Login,{
-    //     });
-    // };
+   
+   
+    Upload.associate = function (models) {
+        Upload.hasMany(models.Image, {
+        });
+    };
 
     return Upload;
 }

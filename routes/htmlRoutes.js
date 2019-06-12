@@ -9,6 +9,7 @@ module.exports = function (app) {
     //     examples: dbExamples
     //   });
     // });
+    
     db.Upload.findAll({
       // where: query
       // edit needed work with Steven
