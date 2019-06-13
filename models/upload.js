@@ -7,18 +7,17 @@ module.exports = function (sequelize, DataTypes) {
         description: {
             type: DataTypes.STRING
         },
-        // will leave it as string until I figure out 
-        file_path: {
-            type: DataTypes.STRING
+        uploaded: {
+            type:DataTypes.BOOLEAN,
+            defaultValue: false
         }
     });
 
-   
-   
-    Upload.associate = function (models) {
-        Upload.hasMany(models.Image, {
+    // needs to link to user once Steven has login done:)
+    Upload.associate = function(models) {
+        Upload.belongsTo(models.Image, {
         });
-    };
+     };
 
     return Upload;
 }

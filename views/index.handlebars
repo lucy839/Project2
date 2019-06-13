@@ -46,12 +46,16 @@
       <div class="col-8 offset-2">
         <h3>Available:</h3><br>
         <ul>
-  
+   
           {{#each Upload}}
           <li>
             <b>{{this.product_name}} </b> <br>
             {{this.description}} <br>
-             <img src="https://res.cloudinary.com/dcza05ust/image/upload/v1560285251/demo/tuysf5j7s5m0era5bsrf.jpg" id="img-preview" />
+            {{!-- <img src ="https://res.cloudinary.com/dcza05ust/image/upload/v1560392652/demo/hry4bddkpyoz9zgckheb.jpg"> --}}
+   {{!-- {{#each Image}} --}}
+             <img src={{this.Image.url}} id="img-preview" />
+              {{!-- <a href="image/1">{{this.text}}</a> --}}
+              {{!-- {{/each}} --}} 
             <br>
             <button class="btn btn-danger float-right delete">trade</button>
             <br><br>

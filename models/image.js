@@ -6,9 +6,9 @@ module.exports = function (sequelize, DataTypes) {
         }
     })
 
-    // needs to link to user once Steven has login done:)
-    Image.associate = function(models) {
-        Image.belongsTo(models.Upload,{
+    // connecting image with other data
+    Image.associate = function (models) {
+       Image.hasMany(models.Upload, {
         });
     };
   

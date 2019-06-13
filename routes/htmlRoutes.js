@@ -9,11 +9,15 @@ module.exports = function (app) {
     //     examples: dbExamples
     //   });
     // });
-    
+    var query = {};
+	
+	
     db.Upload.findAll({
       // where: query
       // edit needed work with Steven
       // , include: [db.User]
+      where: query
+			, include: [db.Image]
     }).then(function (dbUpload) {
       // res.json(dbUpload);
       res.render("index", { Upload: dbUpload });
@@ -28,7 +32,14 @@ module.exports = function (app) {
       });
     });
   });
-
+  // app.get("/image/", function (req, res) {
+  //   // db.Image.findOne({ where: { id: req.params.id } }).then(function (dbImage) {
+  //   //   console.log(dbImage);
+  //     res.render("image"
+  //       // Image: dbImage
+  //     );
+  //   // });
+  // });
   // uploading page
     app.get('/upload', function(req, res) {
         res.render("upload");
