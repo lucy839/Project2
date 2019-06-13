@@ -32,14 +32,7 @@ module.exports = function (app) {
       });
     });
   });
-  // app.get("/image/", function (req, res) {
-  //   // db.Image.findOne({ where: { id: req.params.id } }).then(function (dbImage) {
-  //   //   console.log(dbImage);
-  //     res.render("image"
-  //       // Image: dbImage
-  //     );
-  //   // });
-  // });
+
   // uploading page
     app.get('/upload', function(req, res) {
         res.render("upload");

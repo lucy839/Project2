@@ -98,6 +98,8 @@
 // $submitBtn.on("click", handleFormSubmit);
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
-$("#submit").on("click", function(){
+// direct page to upload
+$("#moveToUploadPage").on("click", function(){
     window.location.pathname = '/upload'
+
 })

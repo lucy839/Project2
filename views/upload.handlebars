@@ -31,62 +31,14 @@
 
     <button id="addImage" type="submit">Add Image</button>
 </form>
-  {{!-- {{#each Upload}}
-    {{#if this.uploaded}}     --}}
 
-{{!-- <a href="/image">{{this.text}}</a> --}}
-{{!-- <div class="uploadImage"> --}}
 <form id="fileForm" action='/api/images' method="post" enctype="multipart/form-data">
-    {{!-- <div class="form-group">
-        <label for="ca">Product name:</label>
-        <input type="text" class = "info"id="product_name" name="product_name">
-    </div>
-    <div class="form-group">
-        <label for="ca">Description:</label>
-        <input type="text" class = "info"id="description" name="description">
-    </div> --}}
-
-    {{!-- </form>  --}}
-    {{!-- <input type="hidden" id="productId" value=""/> --}}
-
-
-
     <input type='file' name='image' id='image' />
-        <button id="submit" type="submit">submit</button> --}}
-    {{!-- </form> --}}
-
-
+        <button id="submit" type="submit">submit</button> 
 </form>
-    {{!-- {{/if}}
-       {{/each}} --}}
-{{!-- <div class="form-group">
-    <form id="fileForm" action='/api/images' method="post" enctype="multipart/form-data">
-       {{!-- <div class="form-group">
-        <label for="ca">Product name:</label>
-        <input type="text" class = "info"id="product_name" name="product_name">
-    </div>
-    <div class="form-group">
-        <label for="ca">Description:</label>
-        <input type="text" class = "info"id="description" name="description">
-    </div> --}}
-
-{{!-- </form>  --}}
-{{!-- <input type="hidden" id="productId" value=""/> --}}
-{{!-- <input type='file' name='image' id='image' />
-<button id="submit" type="submit">submit</button>
-</form>
-</div>  --}}
-
-
-
-
-
-
+ 
 
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<script src="/js/multer.js"></script>
-{{!-- <script src="/assets/js/index.js"></script> --}}
 <script src="/js/uploadProduct.js"></script>
