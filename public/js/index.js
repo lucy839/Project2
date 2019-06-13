@@ -99,7 +99,7 @@
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 // direct page to upload
-$("#moveToUploadPage").on("click", function(){
-    window.location.pathname = '/upload'
+// $("#moveToUploadPage").on("click", function(){
+//     window.location.pathname = '/upload'
 
-})
+// })

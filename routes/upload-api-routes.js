@@ -47,7 +47,7 @@ module.exports = function (app) {
                     include: [db.Image]
 
                 }).then(function () {
-                    res.redirect("/");
+                    res.redirect("/market");
                 });
 
         });

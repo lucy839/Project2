@@ -1,33 +1,20 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Load index page
-  app.get("/", function (req, res) {
-    // db.Example.findAll({}).then(function(dbExamples) {
-    //   res.render("index", {
-    //     msg: "Welcome!",
-    //     examples: dbExamples
-    //   });
-    // });
+  // Load market page
+
+  app.get("/market", function(req, res) {
     var query = {};
 	
 	
     db.Upload.findAll({
-      // where: query
-      // edit needed work with Steven
-      // , include: [db.User]
       where: query
 			, include: [db.Image]
     }).then(function (dbUpload) {
-      // res.json(dbUpload);
-      res.render("index", { Upload: dbUpload });
+      res.render("market", { Upload: dbUpload });
     });
-  });
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
-      res.render("example", {
+    db.Example.findAll({}).then(function(dbExample) {
+      res.render("market", {
         example: dbExample
       });
     });
