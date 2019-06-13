@@ -1,0 +1,56 @@
+<!-- Navigation bar-->
+    <nav class="fullwidth">
+        <div class="mainwidth logoback">
+        <h2>Barter APP</h2>
+        </div>
+        <!-- Please comment in the names-->
+        <ul class="navitems mainwidth">
+            <li style="margin: 0 10px 0 10px"><a href="about.html">About</a></li>
+            <li style="margin: 0 10px 0 10px">|</li>
+            <li style="margin: 0 10px 0 10px"><a href="intro">Items Wanted</a></li>
+            <li style="margin: 0 10px 0 10px">|</li>
+            <li style="margin: 0 10px 0 10px"><a href="market">Market</a></li>
+            <li style="margin: 0 10px 0 10px">|</li>
+            <li style="margin: 0 10px 0 10px"><a href="contact.html">Contact</a></li>
+            <li style="margin: 0 10px 0 10px">|</li>  
+        </ul>
+    </nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h3 class="card-title">Market</h3>
+          <h4>Items uploaded from the community</h4>
+          <!-- image/reveal section -->
+               <img id="myImage" src="">
+               <div id="results-market">
+                <a href="" id="market-result"></a>
+                <a href="" id="market-result2"></a>
+                <a href="" id="market-result3"></a>
+                <a href="" id="market-result4"></a>
+               </div>
+
+                {{#each market}}
+                {{#unless this.market}}
+                    <input class="form-control" type="text" placeholder="{{ this.id }}. {{ this.item_name }}" readonly>
+                {{/unless}}
+                {{/each}}
+        </div>        
+        <div class="col-md-4">
+            {{#each market}}
+            {{#unless this.market}}
+                <form method="POST" action="/items/update?_method=PUT" class="button-size">
+                    <input type="hidden" name="item_id" type="text" value={{ this.id }}>
+                    <br>
+                </form>
+                {{/unless}}
+                {{/each}}
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
