@@ -11,6 +11,26 @@ module.exports = function(app) {
     });
   });
 
+  // Load items page
+  app.get("/items", function(req, res) {
+    db.Example.findAll({}).then(function(dbExample) {
+      res.render("intro", {
+        example: dbExample
+      });
+    });
+  });
+
+  // Load market page
+  app.get("/market", function(req, res) {
+    db.Example.findAll({}).then(function(dbExample) {
+      res.render("market", {
+        example: dbExample
+      });
+    });
+  });
+
+
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
