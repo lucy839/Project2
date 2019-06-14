@@ -21,7 +21,8 @@ router.get("/", function (req, res) {
 
 //Route will get all items available from this specific user in the trades table
 router.get("/items/:id", function (req, res) {
-  trade.userItems("id", vals, function (data) {
+    //Assumed a column name of 'userId' to reference the user under the uploads table
+    trade.userItems("userId", vals, function (data) {
     //Save user id to vals
     vals = req.param.id  
 
@@ -31,9 +32,10 @@ router.get("/items/:id", function (req, res) {
       }
       console.log(tradeObj)
       //Send (or render) the burgObj to index
-      res.render("index", tradeObj)
+      res.render("trades", tradeObj)
   })
 })
+
 //This route will change available value after user clicks the trade button
 router.put("/items/:id", function (req, res) {
   var condition = "id = " + req.params.id
