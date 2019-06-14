@@ -13,7 +13,7 @@ var trade = {
     },
     //Select all items specific to the user
     userItems: function(cols, vals, cb) {
-        orm.selectItem("trades", cols, vals, function(res) {\
+        orm.selectItem("trades", "userId", vals, function(res) {\
         cb(res)
         })
     },
