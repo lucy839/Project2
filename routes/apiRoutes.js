@@ -3,12 +3,12 @@ var express = require("express")
 var router = express.Router();
 
 //Import the model to use database functions for interaction with mysql
-var trade = require("../models/trade")
+var db = require("../models")
 
 //ROUTES
 //Root route will get all items in the trades table
 router.get("/", function (req, res) {
-  trade.available(function (data) {
+  db.trade.available(function (data) {
       var tradeObj = {
           //"trades" keyword here will be used to pass data to index.handlebars
           items: data
@@ -22,7 +22,7 @@ router.get("/", function (req, res) {
 //Route will get all items available from this specific user in the trades table
 router.get("/items/:id", function (req, res) {
     //Assumed a column name of 'userId' to reference the user under the uploads table
-    trade.userItems(vals, function (data) {
+    db.trade.userItems(vals, function (data) {
     //Save user id to vals
     vals = req.param.id  
 
@@ -36,29 +36,22 @@ router.get("/items/:id", function (req, res) {
   })
 })
 
-//This route will change available value after user clicks the trade button
+//This route will change requested value after user clicks the trade button
 router.put("/items/:id", function (req, res) {
-  var condition = "id = " + req.params.id
-
+  var condition = {
+      userItem: "id = " + req.params.id,
+      //Acces the id of the requested item
+      reqItem: reqitem
+  }
+  
   //Change available status for user's item
-  trade.update(condition, function (result) {
+  db.trade.update(condition, function (result) {
       if (result.changedRows == 0) {
           return res.status(404).end();
       } else {
           res.status(200).end()
       }
   })
-})
-
-//This route will add items to the database
-router.post("/items", function (req, res) {
-  item.create([
-      "burger_name", "devoured"
-  ], [
-          req.body.burgName, 0
-      ], function (result) {
-          res.json({ d: result.insertId })
-      })
 })
 
 

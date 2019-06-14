@@ -25,7 +25,7 @@ var trade = {
     },
     //Change availability
     update: function(condition, cb) {
-        orm.updateListing("trades", "available=false", condition, function(res) {
+        orm.updateListing("trades", "requested = true", condition, function(res) {
             cb(res)
         })
     },

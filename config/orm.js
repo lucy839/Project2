@@ -65,10 +65,8 @@ var orm = {
     updateListing: function (tableInput, objColVals, vals, cb) {
         var queryString = "UPDATE " + tableInput
 
-        queryString += " SET "
-        queryString += objToSql(objColVals)
-        queryString += " WHERE "
-        queryString += condition
+        queryString += " SET " + objColVals
+        queryString += " WHERE " + condition
 
         connection.query(queryString, function (err, result) {
             if (err) {
