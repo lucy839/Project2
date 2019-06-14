@@ -4,7 +4,7 @@ var $desription = $("#description");
 var $file_path = $("#file_path");
 var $availableList = $("#available-list");
 var $submitBtn = $("#addImage");
-
+var data;
 // api object 
 var API = {
   // when called, make ajax call to post
@@ -34,13 +34,17 @@ var handleFormSubmit = function (event) {
     return;
   }
   // call api save function
-  API.save(upload).then(function () {
+  API.save(upload).then(function (res) {
+  //  return res;
   });
 
-  // $product_name.val("");
-  // $desription.val("");
-   // ***needs to be adjusted***
-  alert("You can upload image now!");
+  $product_name.val("");
+  $desription.val("");
+  // if id# is 10, alert user, "maximum upload reached, try next time"
+  // else
+  // $("#fileForm").show();
+
 };
 
 $submitBtn.on("click", handleFormSubmit);
+$("#fileForm").hide();

@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Myloveyoungju0430*",
     "database": "trade_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "Myloveyoungju0430*",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",

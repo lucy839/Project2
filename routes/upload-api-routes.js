@@ -24,8 +24,9 @@ module.exports = function (app) {
             description: req.body.description,
             uploaded: true
 
-        }).then(function () {
-            console.log("You can upload image now!");
+        }).then(function (res) {
+            console.log(res.id);
+            // console.log("You can upload image now!");
         });
     });
 
