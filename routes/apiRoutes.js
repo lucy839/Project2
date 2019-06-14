@@ -22,7 +22,7 @@ router.get("/", function (req, res) {
 //Route will get all items available from this specific user in the trades table
 router.get("/items/:id", function (req, res) {
     //Assumed a column name of 'userId' to reference the user under the uploads table
-    trade.userItems("userId", vals, function (data) {
+    trade.userItems(vals, function (data) {
     //Save user id to vals
     vals = req.param.id  
 
