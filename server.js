@@ -1,8 +1,12 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-
 var db = require("./models");
+/*test
+var multer = require("multer");
+var cloudinary = require("cloudinary");
+var cloudinaryStorage = require("multer-storage-cloudinary");
+*/
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -22,6 +26,7 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
+require("./routes/upload-api-routes")(app);
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
