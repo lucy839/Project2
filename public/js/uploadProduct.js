@@ -30,20 +30,24 @@ var handleFormSubmit = function (event) {
   };
 
   if (!(upload.product_name && upload.description)) {
-    alert("You must enter an example text and description!");
+    alert("You must enter a title and description!");
     return;
   }
   // call api save function
   API.save(upload).then(function (res) {
   //  return res;
+  console.log(res);
+  if(res.id < 30){
+    $("#addImage").hide();
+     $("#fileForm").show();
+  }else {
+    alert("List full! please try later");
+    window.location.pathname = '/market'
+  }
   });
 
   $product_name.val("");
   $desription.val("");
-  // if id# is 10, alert user, "maximum upload reached, try next time"
-  // else
-  // $("#fileForm").show();
-
 };
 
 $submitBtn.on("click", handleFormSubmit);

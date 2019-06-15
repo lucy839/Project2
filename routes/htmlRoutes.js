@@ -13,17 +13,16 @@ module.exports = function (app) {
     }).then(function (dbUpload) {
       res.render("market", { Upload: dbUpload });
     });
-    db.Example.findAll({}).then(function(dbExample) {
-      res.render("market", {
-        example: dbExample
-      });
-    });
+  
   });
 
   // uploading page
     app.get('/upload', function(req, res) {
         res.render("upload");
     });
+    app.get('/trades', function(req, res) {
+      res.render("trades");
+  });
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");

@@ -21,11 +21,15 @@ module.exports = function (app) {
     app.post("/api/upload", function (req, res) {
         db.Upload.create({
             product_name: req.body.product_name,
-            description: req.body.description,
-            uploaded: true
+            description: req.body.description
 
-        }).then(function (res) {
-            console.log(res.id);
+        }).then(function () {
+            db.Upload.count({}).then(function(db){
+                res.json(db);
+            })
+           
+            // this part Alex!!!
+            // res.json(res)
             // console.log("You can upload image now!");
         });
     });

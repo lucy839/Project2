@@ -7,10 +7,15 @@ module.exports = function (sequelize, DataTypes) {
         description: {
             type: DataTypes.STRING
         },
-        uploaded: {
-            type:DataTypes.BOOLEAN,
-            defaultValue: false
-        }
+        // wanted: {
+        //     type:DataTypes.BOOLEAN,
+        //     defaultValue: false
+        // },
+        // available:{
+        //     type:DataTypes.BOOLEAN,
+        //     defaultValue: false
+        // },
+       
     });
 
     // needs to link to user once Steven has login done:)
