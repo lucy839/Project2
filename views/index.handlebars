@@ -9,10 +9,10 @@
           <hr class="my-4">
 
           <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signUpModal" role="button"
-            id="signUpButton">Sign Up</a>
+            id="signUpButtonNav">Sign Up</a>
 
           <a class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#signInModal" role="button"
-            id="signInButton">Sign in</a>
+            id="signInButtonNav">Sign in</a>
         </div>
       </div>
     </div>
@@ -32,17 +32,17 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <input type="text" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Enter User's Name">
+            <input type="email" class="form-control email" id="signInEmail" aria-describedby="emailHelp"
+              placeholder="Enter User's Email">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control password" id="signInPassword" placeholder="Password">
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" id="submitButtonEmail">Submit</button>
+        <button type="button" class="btn btn-success" id="signInButton">Submit</button>
       </div>
     </div>
   </div>
@@ -61,22 +61,23 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <input type="text" class="form-control name" id="userName" aria-describedby="emailHelp"
+            <input type="text" class="form-control name" id="signUpName" aria-describedby="emailHelp"
               placeholder="Enter Name">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control email" id="userEmail" aria-describedby="emailHelp"
+            <input type="email" class="form-control email" id="signUpEmail" aria-describedby="emailHelp"
               placeholder="Enter Email">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control password" id="signUpPassword" placeholder="Password">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success" id="signUpButton">Submit</button>
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" id="submitButtonEmail">Submit</button>
-      </div>
+
     </div>
   </div>
 </div>
@@ -85,4 +86,5 @@
 <script type="text/javascript"
   src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 <script src="/js/index.js"></script>
-{{!-- <script src="../public/login.js"></script> --}}
+<script src="/js/login.js"></script>
+<script src="/js/signUp.js"></script>

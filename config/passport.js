@@ -2,6 +2,7 @@ const passport = require("passport");
 const LocalStrategy = require('passport-local').Strategy;
 const db = require("../models")
 
+
 passport.use(
     new LocalStrategy({
         usernameField: "email"
@@ -9,20 +10,23 @@ passport.use(
         function (email, password, done) {
             db.User.findOne({
                 where: {
-                    email: "email"
+                    email: email
                 }
+                
             }).then(function (dbUser) {
                 if (!dbUser) {
+                    console.log("here")
                     return done(null, false, {
                         message: "Incorrect Email."
                     });
-                }
-                if (!dbUser.validPassword(password)) {
-                    return done(null, false, {
-                        message: "Incorrect Password."
-                    });
-                }
-                return done(null, user);
+                } 
+                
+                // else if (!dbUser.validPassword(password)) {
+                //     return done(null, false, {
+                //         message: "Incorrect Password."
+                //     });
+                // }
+                return done(null, dbUser);
             });       
         }
     ));

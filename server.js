@@ -1,6 +1,11 @@
 require("dotenv").config();
+var flash = require("connect-flash");
+var cookieParser = require("cookie-parser")
+var session = require("express-session")
+var passport = require("passport");
 var express = require("express");
 var exphbs = require("express-handlebars");
+
 
 var db = require("./models");
 
@@ -11,6 +16,14 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+
+app.use(cookieParser("keyboard cat"));
+app.use(passport.initialize());
+app.use(session({ 
+  cookie: { maxAge: 60000 },
+  secret: "keyboard cat" 
+}));
+app.use(flash());
 
 // Handlebars
 app.engine(
