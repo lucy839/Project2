@@ -10,13 +10,21 @@ module.exports = function (sequelize, DataTypes) {
         uploaded: {
             type:DataTypes.BOOLEAN,
             defaultValue: false
+        },
+        requested:{
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        available:{
+            type:DataTypes.BOOLEAN,
+            defaultValue:false
         }
     });
 
     // needs to link to user once Steven has login done:)
     Upload.associate = function(models) {
-        Upload.belongsTo(models.Image, {
-        });
+        Upload.belongsTo(models.Image, {});
+        Upload.belongsTo(models.User, {foreignKey: "ownerId"});
      };
 
     return Upload;
