@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <title>Home Page</title>
-</head>
-
-<body>
-  {{{body}}}
-</body>
-
-<script>
-    
-</script>
-
-</html>
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h3 class="card-title">My list</h3>
+                    <ul>
+                        {{#each Upload}}
+                        <li>
+                            <b>{{this.product_name}} </b> <br>
+                            {{this.description}} <br>
+                            <img src={{this.Image.url}} id="img" />
+                            <br>
+                            <form class="create-form" action="/trade" method="GET">
+                            <button class="btn btn-danger float-right" class="trade">trade</button>
+                            </form>
+                            <br><br>
+                            <hr>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
