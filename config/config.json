@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Myloveyoungju0430*",
+    "password": "$3ndNudes",
     "database": "trade_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Myloveyoungju0430*",
+    "password": "$3ndNudes",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",

@@ -5,11 +5,12 @@ var db = require("../models");
 
 module.exports = function (app) {
     // Get all available items
-    app.get("/", function (req, res) {
-        db.Index.findAll({
+    app.get("/trades", function (req, res) {
+        db.Upload.findAll({
             where: { available: true }
         }).then(function (item) {
             res.json(item);
+            // res.render()
         });
     });
 
