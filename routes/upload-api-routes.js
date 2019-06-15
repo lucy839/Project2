@@ -19,6 +19,19 @@ var parser = multer({ storage: storage });
 
 
 module.exports = function (app) {
+    app.get("/upload", function (req, res) {
+        db.Upload.findAll({
+            // where: {
+            //     useId : {...}
+            // }
+            // , include: [db.Image]
+        }).then(function (dbUpload) {
+            // res.json(dbUpload);
+            res.render("upload", { Upload: dbUpload });
+        });
+
+    });
+
     // upload product
     app.post("/api/upload", function (req, res) {
         db.Upload.create({
