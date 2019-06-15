@@ -13,7 +13,7 @@ var trade = {
     },
     //Select all items specific to the user
     userItems: function(cols, vals, cb) {
-        orm.selectItem("trades", "userId", vals, function(res) {\
+        orm.selectItem("trades", "userId", vals, function(res) {
         cb(res)
         })
     },
@@ -25,7 +25,7 @@ var trade = {
     },
     //Change availability
     update: function(condition, cb) {
-        orm.updateListing("trades", "available=false", condition, function(res) {
+        orm.updateListing("trades", "requested = true", condition, function(res) {
             cb(res)
         })
     },
@@ -34,7 +34,7 @@ var trade = {
         orm.deleteListing("trades", condition, cb, function(res) {
             cb(res);
         }
-    }
+        )}
 }
 
 module.exports = trade;
