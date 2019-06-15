@@ -7,22 +7,22 @@ module.exports = function (sequelize, DataTypes) {
         description: {
             type: DataTypes.STRING
         },
-        // wanted: {
-        //     type:DataTypes.BOOLEAN,
+        // requested: {
+        //     type: DataTypes.BOOLEAN,
         //     defaultValue: false
         // },
-        // available:{
-        //     type:DataTypes.BOOLEAN,
+        // available: {
+        //     type: DataTypes.BOOLEAN,
         //     defaultValue: false
-        // },
-       
+        // }
+
     });
 
-    // needs to link to user once Steven has login done:)
-    Upload.associate = function(models) {
-        Upload.belongsTo(models.Image, {
-        });
-     };
+    Upload.associate = function (models) {
+        Upload.belongsTo(models.Image, {});
+        // needs to link to user once Steven has login done:)
+        // Upload.belongsTo(models.User, { foreignKey: "ownerId" });
+    };
 
     return Upload;
 }

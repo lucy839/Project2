@@ -1,3 +1,4 @@
+// Final upload product!
 // get inputs from handlebars
 var $product_name = $("#product_name");
 var $desription = $("#description");
@@ -5,6 +6,7 @@ var $file_path = $("#file_path");
 var $availableList = $("#available-list");
 var $submitBtn = $("#addImage");
 var data;
+
 // api object 
 var API = {
   // when called, make ajax call to post
@@ -35,8 +37,9 @@ var handleFormSubmit = function (event) {
   }
   // call api save function
   API.save(upload).then(function (res) {
-  //  return res;
   console.log(res);
+  
+  // make sure no data is overloaded
   if(res.id < 30){
     $("#addImage").hide();
      $("#fileForm").show();
