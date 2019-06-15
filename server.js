@@ -23,7 +23,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/upload-api-routes")(app);
-require("./routes/apiRoutes")(app);
+require("./routes/trade-api-Routes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
