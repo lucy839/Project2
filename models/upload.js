@@ -14,12 +14,7 @@ module.exports = function (sequelize, DataTypes) {
         available: {
             type: DataTypes.BOOLEAN,
             defaultValue: true
-        },
-        tradeWith:{
-            type: DataTypes.INTEGER,
-            defaultValue: null
         }
-
     });
 
     Upload.associate = function (models) {

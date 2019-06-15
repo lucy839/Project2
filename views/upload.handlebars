@@ -39,9 +39,9 @@
                 <img src={{this.Image.url}} id="img" />
                 <br>
                 {{#if requested}}
-                {{!-- <form action="api/trade/{{id}}" method="POST"> --}}
-                <button class="btn btn-danger float-right trade">requested</button>
-                {{!-- </form> --}}
+                <form action="/api/availability/{{id}}" method="POST">
+                    <button class="btn btn-danger float-right trade">requested</button>
+                </form>
                 <br><br>
                 <hr>
                 {{/if}}
