@@ -5,8 +5,8 @@
 
 </div>
 
-    <!-- user item uploading information --> 
-    <h2>Upload Item </h2>
+<!-- user item uploading information -->
+<h2>Upload Item </h2>
 
 <form class="create-form" action="/api/upload" method="POST">
     <div class="form-group">
@@ -23,45 +23,38 @@
 
 <form id="fileForm" action='/api/images' method="post" enctype="multipart/form-data">
     <input type='file' name='image' id='image' />
-        <button id="submit" type="submit">submit</button> 
+    <button id="submit" type="submit">submit</button>
 </form>
- 
-    <!-- List of already uploaded products by this user -->
+
+<!-- List of already uploaded products by this user -->
 <div class="uploaded">
     <div class="row">
         <div class="col-md-4">
             <h2>Items already uploaded by the user previously</h2>
-                <!-- image/reveal section -->
-               <img id="myImage" src="">
-               <div id="results">
-                <a href="" id="result"></a>
-                <a href="" id="result2"></a>
-                <a href="" id="result3"></a>
-                <a href="" id="result4"></a>
-               </div>
+            {{#each Upload}}
+            {{!-- if userId --}}
+            <li>
+                <b>{{this.product_name}} </b> <br>
+                {{this.description}} <br>
+                <img src={{this.Image.url}} id="img" />
+                <br>
+                {{#if requested}}
+                {{!-- <form action="api/trade/{{id}}" method="POST"> --}}
+                <button class="btn btn-danger float-right trade">requested</button>
+                {{!-- </form> --}}
+                <br><br>
+                <hr>
+                {{/if}}
+            </li>
 
-                {{#each Uploads}}
-                {{#unless this.uploaded}}
-                    <input class="form-control" type="text" placeholder="{{ this.id }}. {{ this.item_name }}" readonly>
-                {{/unless}}
-                {{/each}}
-
-                <div class="col-md-4">
-                 {{#each Uploads}}
-                 {{#unless this.uploaded}}
-                    <form method="POST" action="/items/update?_method=PUT" class="button-size">
-                    <input type="hidden" name="item_id" type="text" value={{ this.id }}>
-                    <br>
-                    </form>
-                    {{/unless}}
-                    {{/each}}
-              </div>    
-        </div>  
+            {{/each}}
+            <!-- image/reveal section -->
+        </div>
     </div>
-</div> 
+</div>
+</div>
 
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/uploadProduct.js"></script>
-
