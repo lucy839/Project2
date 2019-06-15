@@ -7,15 +7,14 @@ module.exports = function (sequelize, DataTypes) {
         description: {
             type: DataTypes.STRING
         },
-        // requested: {
-        //     type: DataTypes.BOOLEAN,
-        //     defaultValue: false
-        // },
-        // available: {
-        //     type: DataTypes.BOOLEAN,
-        //     defaultValue: false
-        // }
-
+        requested: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        available: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: true
+        }
     });
 
     Upload.associate = function (models) {

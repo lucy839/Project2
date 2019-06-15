@@ -7,8 +7,8 @@ module.exports = function (app) {
       where: {
         createdAt: { [Op.lt]: new Date(new Date() - 30 * 24 * 60 * 60 * 1000) }
       }
-    }).then(function (res) {
-      console.log(res);
+    }).then(function () {
+      // console.log(res);
       var query = {};
       db.Upload.findAll({
         where: query
@@ -29,6 +29,9 @@ module.exports = function (app) {
   app.get('/trades', function (req, res) {
     res.render("trades");
   });
+  app.get('/about',function(req,res){
+    res.render("about");
+  })
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {

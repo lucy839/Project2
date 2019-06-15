@@ -13,7 +13,11 @@
                             {{this.description}} <br>
                             <img src={{this.Image.url}} id="img" />
                             <br>
-                            <button class="btn btn-danger float-right" id="trade">trade</button>
+                    
+
+                                <form action="api/trade/{{id}}" method="POST">
+                                <button class="btn btn-danger float-right trade">trade</button>
+                            </form>
                             <br><br>
                             <hr>
                         </li>

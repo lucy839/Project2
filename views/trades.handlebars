@@ -11,8 +11,9 @@
                             {{this.description}} <br>
                             <img src={{this.Image.url}} id="img" />
                             <br>
-                            <form class="create-form" action="/trade" method="GET">
-                            <button class="btn btn-danger float-right" class="trade">trade</button>
+                             <form action="/api/availability/{{id}}" method="POST">
+                                <button class="btn btn-danger float-right tradeWith">confirm</button>
+                            </form>
                             </form>
                             <br><br>
                             <hr>

@@ -40,7 +40,7 @@ var handleFormSubmit = function (event) {
   console.log(res);
   
   // make sure no data is overloaded
-  if(res.id < 30){
+  if(res < 30){
     $("#addImage").hide();
      $("#fileForm").show();
   }else {
