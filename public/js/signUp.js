@@ -28,7 +28,7 @@ $(document).ready(function() {
                 data: newUser
             }).then(function(dbEntry) {
                 console.log(dbEntry);
-                window.location.replace("/example")
+                window.location.replace("/market")
             })
         }
 

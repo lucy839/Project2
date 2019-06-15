@@ -25,7 +25,7 @@ $(document).ready(function() {
                 data: user
             }).then(function() {
                 console.log(user)
-                window.location.replace("/example")
+                window.location.replace("/market")
             }).catch(function(err) {
                 console.log(err);
             })
