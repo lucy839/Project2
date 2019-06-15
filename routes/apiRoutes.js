@@ -1,24 +1,35 @@
+// Routes
+
+
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all available items
+  app.get("/", function(req, res) {
+    db.Index.findAll({
+        where: { available: true } 
+    }).then(function(item) {
+      res.json(item);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  var availability = {
+      availble: false
+  }
+  // Update availability status
+  app.put("/api/availability/:id", function(req, res) {
+    db.Upload.update(availability, {
+        where: { id: req.params.id }
+    }.then(function(item) {
+      res.json(item);
+    })
+    })
+}
+  // Delete a lsiting by id
+  app.delete("/api/destroy/:id", function(req, res) {
+    db.Example.destroy({ where: { id: req.params.id } })
+    .then(function(item) {
+      res.json(item);
     });
   });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-};
+}
