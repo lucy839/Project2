@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h3 class="card-title">My list</h3>
+                    <ul>
+                        {{#each Upload}}
+                        <li>
+                            <b>{{this.product_name}} </b> <br>
+                            {{this.description}} <br>
+                            <img src={{this.Image.url}} id="img" />
+                            <br>
+                            <form class="create-form" action="/trade" method="GET">
+                            <button class="btn btn-danger float-right" class="trade">trade</button>
+                            </form>
+                            <br><br>
+                            <hr>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h3 class="card-title">Market</h3>
+                    <ul>
+
+                        {{#each Upload}}
+                        {{#if available}}
+                        <li>
+                            <b>{{this.product_name}} </b> <br>
+                            {{this.description}} <br>
+                            <img src={{this.Image.url}} id="img" />
+                            <br>
+                            <button class="btn btn-danger float-right" id="trade">trade</button>
+                            <br><br>
+                            <hr>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/trade.js"></script>

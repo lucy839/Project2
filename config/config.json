@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Scarlet15$$",
+    "password": "",
     "database": "trade_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
@@ -19,5 +19,4 @@
     "dialect": "mysql"
   }
 }
-
 

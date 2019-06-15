@@ -7,7 +7,7 @@
     "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
-    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
+    "test": "cross-env NODE_ENV=test mocha --reporter spec --exit"
   },
   "license": "ISC",
   "dependencies": {
@@ -20,6 +20,9 @@
     "flash": "^1.1.0",
     "jslint": "^0.12.1",
     "lint": "^0.7.0",
+    "cloudinary": "^1.14.0",
+    "multer": "^1.4.1",
+    "multer-storage-cloudinary": "^2.2.1",
     "mysql2": "^1.6.5",
     "nodemon": "^1.19.1",
     "passport": "^0.4.0",
