@@ -1,4 +1,3 @@
-// Final upload product!
 // get inputs from handlebars
 var $product_name = $("#product_name");
 var $desription = $("#description");

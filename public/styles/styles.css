@@ -1,6 +1,11 @@
 /* GLOBAL SETTINGS */
 /* ==================================================== */
-
+#user{z-index:7}
+#logout{
+  border:none;
+  background:none;
+  padding:none;
+}
 body {
   margin-top: 10%;
   background: url("../images/trade.jpg");

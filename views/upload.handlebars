@@ -1,7 +1,7 @@
 {{!-- navigation bar --}}
 <nav class="navbar navbar-expand-lg fixed-top">
     {{!-- app name --}}
-    <div class="navbar-brand">Barter Bud <i class="fas fa-sync-alt"></i></div>
+    <div class="navbar-brand">Barter Bud <i class="fas fa-sync-alt"></i></div> 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,8 +19,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="upload">Profile</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Login</a>
+                    <a class="nav-link" method="GET" href="/logout">Logout</a>
                 </li>
             </ul>
         </ul>
@@ -31,11 +30,10 @@
 <div class="container">
     <!-- List of already uploaded products by this user -->
     <div class="col-md-8 profile">
-        <h2 id = "uploaded">Items Uploaded by User</h2>
+        <h2 id="uploaded">Items Uploaded by User</h2>
         {{#each Upload}}
-        {{!-- if userId --}}
         <li>
-            <b>{{this.product_name}} </b> <br>
+            <b>{{this.product_name}} </b><br>
             {{this.description}} <br>
             <img src={{this.Image.url}} id="img" alt="no image uploaded" />
             <br>
@@ -44,7 +42,7 @@
                 <button class="btn btn-danger float-right trade">requested</button>
             </form>
             {{/if}}
-              <br><br>
+            <br><br>
             <hr>
         </li>
         {{/each}}
@@ -53,7 +51,7 @@
     {{!-- upload item --}}
     <div class="row">
         <div class="col-md-12 upload">
-            <h2 id = "upload">Upload</h2>
+            <h2 id="upload">Upload</h2>
             <form class="create-form" action="/api/upload" method="POST">
                 <div class="form-group">
                     <label for="ca">Product name:</label>
@@ -74,3 +72,4 @@
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/uploadProduct.js"></script>
+<script src="/js/login.js"></script>

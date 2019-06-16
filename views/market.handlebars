@@ -20,7 +20,7 @@
                     <a class="nav-link" href="upload">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Login</a>
+                    <a class="nav-link" method="GET" href="/logout">Logout</a>
                 </li>
             </ul>
         </ul>
@@ -30,13 +30,13 @@
 {{!-- list of availabe products for trade --}}
 <div class="container">
     <div class="card-body">
-            <h3 class="card-title market">Available</h3>
+        <h3 class="card-title market">Available</h3>
         <ul>
             {{#each Upload}}
             {{#if available}}
             <b>{{this.product_name}} </b> <br>
             {{this.description}} <br>
-            <img src={{this.Image.url}} id="img" alt="no image uploaded"  />
+            <img src={{this.Image.url}} id="img" alt="no image uploaded" />
             <br>
             <form action="api/trade/{{id}}" method="POST">
                 <button class="btn btn-danger float-right trade">trade</button>
