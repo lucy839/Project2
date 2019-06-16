@@ -1,16 +1,10 @@
 var db = require("../models");
-
-module.exports = function(app) {
-  // Load index page
-
+ 
+var Op = db.Sequelize.Op;
+module.exports = function (app) {
   app.get("/", function(req, res) {
     res.render("index")
   });
-
-
- 
-const Op = db.Sequelize.Op;
-module.exports = function (app) {
   // Load market page
   app.get("/market", function (req, res) {
     db.Upload.destroy({

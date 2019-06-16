@@ -17,12 +17,13 @@ module.exports = function (app) {
       email: req.body.email,
       password: req.body.password
     }).then(function (dbUser) {
+      // update upload to true for this userid
       res.json(dbUser);
     });
   });
 
   app.post("/api/login", passport.authenticate("local"), function(_req, res) {
- 
+    // update upload to true for this userid
     res.sendStatus(204);
 
   })
@@ -44,9 +45,5 @@ module.exports = function (app) {
   // });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function (req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
-      res.json(dbExample);
-    });
-  });
+
 }

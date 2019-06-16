@@ -1,9 +1,11 @@
 /* GLOBAL SETTINGS */
 /* ==================================================== */
 
-
 body {
-  background: url("../images/6.png");
+  margin-top: 10%;
+  background: url("../images/trade.jpg");
+  background-repeat: no-repeat;
+  background-size: 180%;
 }
 
 p{
@@ -54,10 +56,12 @@ button{
 
 
 .container {
+  background:white;
   width: 100%;
   max-width: 960px;
-  margin: 0 auto;
-  clear: both;
+  height:500px;
+  /* margin: 0 auto; */
+  /* clear: both; */
 }
 
 .uploaded {
@@ -67,10 +71,60 @@ button{
   margin: 20px 0 25px;
   overflow: auto;
 }
+/* navbar */
+.navbar{
+  background:rgb(255, 255, 255, 0.8);
+  padding-left: 5%;
+  padding-right:5%;
+}
+.navbar-brand{
+  color:#43a9a4;
+  font-weight: bold; 
+  font-size:30px;
+}
+.nav-link{
+  color:#43a9a4;
+  font-size:20px;
+}
+/* index */
+ .jumbotron{
+  background:white;
+  padding:5%;
+ }
+ .intro{
+   font-size: 80px;
+ }
+ #signUpButtonNav, #signInButtonNav, #signInButton, #signUpButton{
+  background:#4aaaa5; 
+  color: white;
+  border: none;
+}
+#signUpButtonNav:hover, #signInButtonNav:hover{
+  opacity:0.75
+}
 
+/* about */
+#about p {
+  font-size: 25px
+}
 
-
-
+.market {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  clear: both;
+}
+.profile{
+  background:white;
+  /* width:800px;
+  height:500px;
+  margin-left: 20%; */
+  height:500px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  clear: both;
+}
 
 
 /* adjustment when viewed from computer */
