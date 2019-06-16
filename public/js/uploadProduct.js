@@ -41,7 +41,7 @@ var handleFormSubmit = function (event) {
   
   // make sure no data is overloaded
   if(res < 30){
-    $("#addImage").hide();
+    $(".create-form").hide();
      $("#fileForm").show();
   }else {
     alert("List full! please try later");

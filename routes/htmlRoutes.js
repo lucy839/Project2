@@ -27,6 +27,7 @@ module.exports = function (app) {
   // load uploading page
   app.get('/upload', function (req, res) {
     res.render("upload");
+    // find everything by that user 
   });
 
   // load trading page
