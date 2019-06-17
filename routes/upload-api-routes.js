@@ -5,7 +5,7 @@ var db = require("../models");
 // cloudinary and multer
 var multer = require("multer");
 var cloudinary = require('cloudinary');
-
+// testing
 cloudinary.config({
     // cloud_name: process.env.CLOUD_NAME,
     // api_key: process.env.API_ID,
