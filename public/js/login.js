@@ -5,33 +5,34 @@ $(document).ready(function () {
 
     $("#signInButton").on("click", function () {
         event.preventDefault();
-        console.log("made it")
-        // check if all values are entered
-        if (!emailInput.val().trim() || !passwordInput.val()) {
-            return;
-        }
+        window.location.replace("/market")
+        // console.log("made it")
+        // // check if all values are entered
+        // if (!emailInput.val().trim() || !passwordInput.val()) {
+        //     return;
+        // }
 
-        let user = {
-            email: emailInput.val().trim(),
-            password: passwordInput.val().trim()
-        };
+        // let user = {
+        //     email: emailInput.val().trim(),
+        //     password: passwordInput.val().trim()
+        // };
 
-        // call login function with values obtained
-        logIn(user);
-        emailInput.val("");
-        passwordInput.val("");
+        // // call login function with values obtained
+        // logIn(user);
+        // emailInput.val("");
+        // passwordInput.val("");
 
-        // login function to make ajax call 
-        function logIn(user) {
-            $.ajax("/api/login", {
-                type: "POST",
-                data: user
-            }).then(function () {
-                console.log(user)
-                window.location.replace("/market")
-            }).catch(function (err) {
-                console.log(err);
-            })
-        }
+        // // login function to make ajax call 
+        // function logIn(user) {
+        //     $.ajax("/api/login", {
+        //         type: "POST",
+        //         data: user
+        //     }).then(function () {
+        //         console.log(user)
+        //         window.location.replace("/market")
+        //     }).catch(function (err) {
+        //         console.log(err);
+        //     })
+        // }
     })
 })
