@@ -20,12 +20,13 @@ passport.use(
                         message: "Incorrect Email."
                     });
                 } 
-                
-                // else if (!dbUser.validPassword(password)) {
-                //     return done(null, false, {
-                //         message: "Incorrect Password."
-                //     });
-                // }
+                // testing
+                else if (dbUser.password !=password) {
+                    console.log("hi")
+                    return done(null, false, {
+                        message: "Incorrect Password."
+                    });
+                }
                 return done(null, dbUser);
             });       
         }
