@@ -14,7 +14,7 @@
                     <a class="nav-link" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="market">Market</a>
+                    <a class="nav-link" id="marketNav">Market</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="upload">Profile</a>
@@ -32,6 +32,7 @@
         <!-- List of already uploaded products by this user -->
         <div class="profile">
             <h2 id="uploaded">Items Uploaded by User</h2>
+            <h5 id = "warning"> ***Market can be displayed once image has been added***</h5>
             {{#each Upload}}
             {{#if available}}
             <b>Product Name: {{this.product_name}} </b> <br>
@@ -85,7 +86,7 @@
                     <label for="contact">Email address</label>
                     <input type="email" class="form-control" id="contact" placeholder="name@example.com" required>
                     <div class="invalid-feedback">
-                        Please enterr email address for contact
+                        Please enter email address for contact
                     </div>
                 </div>
                 <button id="addImage" type="submit">Add Image</button>
@@ -94,6 +95,7 @@
                 <input type='file' name='image' id='image' required>
                 <br></br>
                 <button id="submit" type="submit">submit</button>
+
             </form>
         </div>
     </div>

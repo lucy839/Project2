@@ -60,6 +60,9 @@ img{
 .nav-link:hover {
   color:#17716c;
 }
+#marketNav{
+  color:#43a9a4;
+}
 
 /* index */
  .jumbotron{
@@ -129,6 +132,9 @@ input{
   padding: 5px 5px 5px 5px;
   margin-right: 25px;
   color: #777777;
+}
+#warning{
+  color: red;
 }
 
 /* adjustment when viewed from each computer, ipad, phones, etc */
@@ -218,11 +224,7 @@ input{
     height:450px;
   }
 }
-@media screen and (max-width: 500px) {
-  .container{
-    margin-left:2.5%;
-  }
-}
+
 @media screen and (max-width: 414px) {
   .container{
     height:530px;
