@@ -20,7 +20,7 @@ passport.use(
                         message: "Incorrect Email."
                     });
                 } 
-                // testing
+                
                 else if (dbUser.password !=password) {
                     console.log("hi")
                     return done(null, false, {
