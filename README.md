@@ -13,6 +13,9 @@ The community feels stronger connections since they interact and helping each ot
 ## Link
 - https://secure-headland-57611.herokuapp.com/
 
+## Demo
+- - ![Alt text](public/images/demo.png?raw=true  "demo")
+
 ## Conflict/Resolution
 - Initially we used both sequelize and built an ORM to handle routing. We found out midway through that these were not compatible and hand to re-write the program using only sequelize
 - MySQL won’t store photo files and Heroku charges money if too many files are uploaded. Given that this is a school project, we didn’t feel like shelling out cash to complete this but having photos of the items displayed is critical to the user experience. To remedy this, we added Cloudinary
